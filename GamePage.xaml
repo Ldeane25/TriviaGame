@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LukeDeaneTrivia.GamePage"
+             Title="Game">
+
+    <!-- Root Grid to stack background image and content -->
+    <Grid>
+        <!-- Background Image -->
+        <Image Source="gamepage.jpg"
+               Aspect="AspectFill"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand" />
+
+        <!-- Foreground Content -->
+        <VerticalStackLayout Padding="20" Spacing="30" x:Name="GeneralLayout">
+            <ActivityIndicator IsRunning="{Binding IsBusy}" Color="Pink"/>
+            <Label Text="{Binding ShowTime}" HorizontalOptions="Center" FontSize="30" TextColor="{DynamicResource TextColor}"/>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10" x:Name="CurrPlayerStack">
+                <Label
+                    TextColor="{DynamicResource TextColor}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="17"
+                    Text="Current Player:"/>
+                <Label
+                    Text="{Binding CurrPlayer}"
+                    TextColor="{DynamicResource TextColor}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="17"/>
+            </HorizontalStackLayout>
+
+            <Label
+                x:Name="QuestionLabel"
+                Text="{Binding CurrentQuestion.question}"
+                TextColor="{DynamicResource TextColor}"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                FontSize="30"/>
+
+            <CollectionView ItemsSource="{Binding Answers}" x:Name="QuestionsView"
+                            SelectedItem="{Binding SelectedAnswer}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Button MaximumWidthRequest="400" Text="{Binding}" Clicked="AnswBtn_Clicked" BackgroundColor="{DynamicResource TextColor}" FontSize="18" TextColor="{DynamicResource BackgroundColor}"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

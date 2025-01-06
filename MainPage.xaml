@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title=""
+             x:Class="LukeDeaneTrivia.MainPage">
+
+    <!-- Root Grid to hold the background image and content -->
+    <Grid>
+        <!-- Background Image -->
+        <Image Source="background_home.jpg"
+               Aspect="AspectFill"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand" />
+
+        <!-- Foreground Content -->
+        <ScrollView>
+            <VerticalStackLayout
+                Padding="30,0"
+                Spacing="25">
+
+                <Image Source="result.png" WidthRequest="200" HeightRequest="200"/>
+                <Label HorizontalOptions="Center" TextColor="{DynamicResource TextColor}" HorizontalTextAlignment="Center" FontAttributes="Bold" Text="Welcome! How many players will play?" FontSize="20"/>
+                <Grid RowDefinitions="*,*" ColumnDefinitions="*,*" ColumnSpacing="10" RowSpacing="10">
+                    <Button Text="1" FontSize="30" Grid.Row="0" Grid.Column="0" Clicked="PlayBtn_Clicked" BackgroundColor="#640D5F"/>
+                    <Button Text="2" FontSize="30" Grid.Row="0" Grid.Column="1" Clicked="PlayBtn_Clicked" BackgroundColor="#D91656"/>
+                    <Button Text="3" FontSize="30" Grid.Row="1" Grid.Column="0" Clicked="PlayBtn_Clicked" BackgroundColor="#EB5B00"/>
+                    <Button Text="4" FontSize="30" Grid.Row="1" Grid.Column="1" Clicked="PlayBtn_Clicked" BackgroundColor="#FFB200"/>
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
+

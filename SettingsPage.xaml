@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LukeDeaneTrivia.SettingsPage"
+             BackgroundColor="{DynamicResource BackgroundColor}"
+             Title="Settings ">
+    
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="20">
+        <HorizontalStackLayout>
+            <Label 
+                Text="🕶 Dark theme "
+                FontSize="24"
+                TextColor="{DynamicResource TextColor}"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Switch Toggled="DarkTheme_Toggled" IsToggled="{Binding IsDarkTheme}"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout >
+            <Label
+                FontSize="24"
+                TextColor="{DynamicResource TextColor}"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Text=" Difficulty: "/>
+            <Picker
+                x:Name="DifficultyPicker"
+                FontSize="24"
+                TextColor="{DynamicResource TextColor}"
+                SelectedItem="{Binding Difficulty}"
+                TitleColor="{DynamicResource TextColor}"
+                
+                >
+                <Picker.Items>
+                    <x:String>Easy</x:String>
+                    <x:String>Medium</x:String>
+                    <x:String>Hard</x:String>
+                </Picker.Items>
+            </Picker>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Label
+                FontSize="24"
+                Text="🎶 Music "
+                TextColor="{DynamicResource TextColor}"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Switch Toggled="Music_Toggled"/>
+        </HorizontalStackLayout>
+
+         <HorizontalStackLayout>
+            <Label
+                FontSize="24"
+                Text=" Questions "
+                TextColor="{DynamicResource TextColor}"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Entry x:Name="QuestionsEntry" Keyboard="Numeric" Text="{Binding NumOfQuestions}" FontSize="24" TextColor="{DynamicResource TextColor}"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Label
+                FontSize="24"
+                Text="⏱️ Time "
+                TextColor="{DynamicResource TextColor}"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Entry x:Name="TimeEntry" Keyboard="Numeric" Text="{Binding Time}" FontSize="24" TextColor="{DynamicResource TextColor}"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Label FontSize="24"
+                Text=" Topics: "
+                TextColor="{DynamicResource TextColor}"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"/>
+            <Picker
+                FontSize="24"
+                x:Name="TopicsPicker"
+                SelectedItem="{Binding Topic}"
+                TitleColor="{DynamicResource TextColor}"
+                TextColor="{DynamicResource TextColor}">
+               
+            <Picker.Items>
+                <x:String>Computers</x:String>
+                <x:String>General</x:String>
+                <x:String>Books</x:String>
+                <x:String>Film</x:String>
+                <x:String>Music</x:String>
+                <x:String>Video Games</x:String>
+                <x:String>Sports</x:String>
+            </Picker.Items>
+
+            </Picker>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

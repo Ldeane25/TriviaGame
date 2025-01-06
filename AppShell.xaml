@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="LukeDeaneTrivia.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:LukeDeaneTrivia"
+    Shell.FlyoutBehavior="Disabled"
+    Title="LukeDeaneTrivia">
+
+    <TabBar>
+        <Tab Title="Home" Icon="home.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
+        </Tab>
+
+        <Tab Title="Settings" Icon="settings.png">
+            <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}"/>
+        </Tab>
+
+        <Tab Title="Results" Icon="results.png">
+            <ShellContent ContentTemplate="{DataTemplate local:ResultsPage}"/>
+        </Tab>
+
+    </TabBar>
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <ShellContent Title="Game Page" ContentTemplate="{DataTemplate local:GamePage}" Route="game"/>
+</Shell>
+
