@@ -204,6 +204,7 @@ public partial class GamePage : ContentPage, INotifyPropertyChanged
     private void StopTimer()
     {
         timer.Stop();
+        timer.Dispose(); // Properly dispose of the timer
     }
 
 

@@ -13,7 +13,7 @@ public partial class ResultsPage : ContentPage
 	{
 		InitializeComponent();
         playersScoreString = Preferences.Get("results", "");
-        var playersScore = playersScoreString == "" ? new Dictionary<string, int>() : JsonSerializer.Deserialize<Dictionary<string, int>>(playersScoreString);
+        var playersScore = string.IsNullOrEmpty(playersScoreString) ? new Dictionary<string, int>() : JsonSerializer.Deserialize<Dictionary<string, int>>(playersScoreString) ?? new Dictionary<string, int>();
         PlayersScore = playersScore.ToList();
 		BindingContext = this;
     }
